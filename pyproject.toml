@@ -32,10 +32,10 @@ dev = [
     "pytest>=9.0.0",
 ]
 [tool.setuptools.packages.find]
-include = ["fictomed*"]
+include = ["genpatientprofile*"]
 exclude = ["data*", "scenarios*", "reports*"]
 [tool.setuptools.package-data]
-"fictomed.sites.aphp" = [
+"genpatientprofile.sites.aphp" = [
     "templates/*.yaml",
     "templates/*.yml",
     "templates/**/*.txt",

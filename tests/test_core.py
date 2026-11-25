@@ -1,9 +1,9 @@
 import polars as pl
 import pytest
 
-import fictomed.core as core
-from fictomed.core import generate
-from fictomed.registry import PIPELINES, resolve_pipeline_name
+import genpatientprofile.core as core
+from genpatientprofile.core import generate
+from genpatientprofile.registry import PIPELINES, resolve_pipeline_name
 
 
 class DummyPipeline:

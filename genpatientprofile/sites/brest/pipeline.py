@@ -13,12 +13,12 @@ from typing import override
 
 import polars as pl
 
-from fictomed.base import BasePipeline
-from fictomed.fictive import generate_fictive_stays
-from fictomed.scenario import format_scenarios
-from fictomed.sites.brest import constants
-from fictomed.sites.brest.fictive import generate_brest_fictive
-from fictomed.sites.brest.scenario import format_brest_scenario
+from genpatientprofile.base import BasePipeline
+from genpatientprofile.fictive import generate_fictive_stays
+from genpatientprofile.scenario import format_scenarios
+from genpatientprofile.sites.brest import constants
+from genpatientprofile.sites.brest.fictive import generate_brest_fictive
+from genpatientprofile.sites.brest.scenario import format_brest_scenario
 
 
 class BrestPipeline(BasePipeline):

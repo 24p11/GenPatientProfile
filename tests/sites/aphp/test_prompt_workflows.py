@@ -3,9 +3,9 @@ from pathlib import Path
 import polars as pl
 import pytest
 
-from fictomed.base import BasePipeline
-from fictomed.sites.aphp import prompt
-from fictomed.sites.aphp.scenario import format_aphp_scenario
+from genpatientprofile.base import BasePipeline
+from genpatientprofile.sites.aphp import prompt
+from genpatientprofile.sites.aphp.scenario import format_aphp_scenario
 
 
 class _Pipeline(BasePipeline):

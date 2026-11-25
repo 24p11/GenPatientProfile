@@ -200,7 +200,7 @@ def load_atih_rules() -> dict[str, dict]:
     """Parse ``templates/regles_atih.yml`` into ``{rule_id: {texte, criteres}}``.
 
     Mirrors the YAML-loading block in ``generate_scenario.__init__``
-    (utils_v2.py:295–301). The file lives in ``fictomed/sites/aphp/templates/``
+    (utils_v2.py:295–301). The file lives in ``genpatientprofile/sites/aphp/templates/``
     (part of the codebase, not the external referentials directory).
     """
     with (TEMPLATES_DIR / "regles_atih.yml").open("r", encoding="utf-8") as f:

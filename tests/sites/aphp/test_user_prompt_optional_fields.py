@@ -1,6 +1,6 @@
 import pytest
 
-from fictomed.sites.aphp.prompt import make_user_prompt
+from genpatientprofile.sites.aphp.prompt import make_user_prompt
 
 
 def _prompt(**values):

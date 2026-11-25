@@ -2,7 +2,7 @@
 
 This module is the 1:1 port of ``generate_scenario.define_text_managment_type``
 (``utils_v2.py:653–934``). Given a clinical scenario already populated by
-:mod:`fictomed.sites.aphp.scenario`, it decides:
+:mod:`genpatientprofile.sites.aphp.scenario`, it decides:
 
 - the **coding rule** from the ATIH ICD-10 hierarchy methodology (e.g.
   ``T1``, ``D3-2``, ``S1-Chronic``…),
@@ -44,8 +44,8 @@ class ManagmentContext:
     """Frozen sets of codes consulted by :func:`define_managment_type`.
 
     Built once per pipeline run via :func:`build_context` from the dict
-    returned by :func:`fictomed.sites.aphp.loader.load_data` plus the cancer /
-    chronic sets already computed by :class:`fictomed.sites.aphp.scenario.ScenarioContext`.
+    returned by :func:`genpatientprofile.sites.aphp.loader.load_data` plus the cancer /
+    chronic sets already computed by :class:`genpatientprofile.sites.aphp.scenario.ScenarioContext`.
     """
 
     # ICD code lists (from ``referentials/icd_codes_*.csv``)
@@ -112,7 +112,7 @@ def define_managment_type(
 ) -> ManagmentDecision:
     """Decide ``(situa, coding_rule, template_name)`` for one *case*.
 
-    *case* is a scenario dict produced by :func:`fictomed.sites.aphp.scenario.build_scenario`.
+    *case* is a scenario dict produced by :func:`genpatientprofile.sites.aphp.scenario.build_scenario`.
     The function mirrors the AP-HP cascade exactly, including ordering and
     edge cases — see ``utils_v2.py:653`` for the original. Random branches
     (delivery, chronic-DP) use *np_rng* if given for reproducibility.

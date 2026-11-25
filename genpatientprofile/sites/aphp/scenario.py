@@ -10,7 +10,7 @@ Lookups (ICD/CCAM descriptions and synonyms) are pre-computed at context
 build time so the per-profile loop stays cheap.
 
 The original ``define_text_managment_type`` is **not** called from here —
-it lives in :mod:`fictomed.sites.aphp.managment` and the pipeline orchestrator
+it lives in :mod:`genpatientprofile.sites.aphp.managment` and the pipeline orchestrator
 chains the two so neither module depends on the other.
 """
 
@@ -154,7 +154,7 @@ def _type_secondary_icd(
 def build_context(data: dict[str, pl.LazyFrame]) -> ScenarioContext:
     """Materialise everything needed to build scenarios from a *data* dict.
 
-    *data* is the dictionary returned by :func:`fictomed.sites.aphp.loader.load_data`.
+    *data* is the dictionary returned by :func:`genpatientprofile.sites.aphp.loader.load_data`.
     """
     cancer_codes = _build_cancer_codes(data["cancer_codes"])
     chronic_codes = _build_chronic_codes(data["chronic"], cancer_codes)
@@ -581,7 +581,7 @@ def format_aphp_scenario(
     Adds the user prompt, the prompt-set provenance, and the columns required
     by the selected one- or two-stage workflow.
     """
-    from fictomed.sites.aphp import prompt
+    from genpatientprofile.sites.aphp import prompt
 
     resolved_prompt_set = prompt.resolve_prompt_set(
         prompt_set=prompt_set,

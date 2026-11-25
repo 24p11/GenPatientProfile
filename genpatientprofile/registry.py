@@ -1,8 +1,8 @@
 import warnings
 from pathlib import Path
 
-from fictomed.sites.aphp.pipeline import APHPPipeline
-from fictomed.sites.brest.pipeline import BrestPipeline
+from genpatientprofile.sites.aphp.pipeline import APHPPipeline
+from genpatientprofile.sites.brest.pipeline import BrestPipeline
 
 PIPELINES = {
     "pmsi_sampling": BrestPipeline,

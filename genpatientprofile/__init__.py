@@ -1,5 +1,5 @@
-from fictomed.core import generate
-from fictomed.registry import (
+from genpatientprofile.core import generate
+from genpatientprofile.registry import (
     CONFIG_DIR,
     PIPELINE_ALIASES,
     PIPELINE_NAMES,

@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from fictomed.sites.aphp.code_cards import CodeCardsRegistry
+from genpatientprofile.sites.aphp.code_cards import CodeCardsRegistry
 
 
 def _write_card_library(

@@ -52,12 +52,12 @@ pip install -e .
 ### En tant que librairie
 
 La distribution s'installe sous le nom `GenPatientProfile`. Le module Python
-reste nommé `fictomed` afin de préserver la compatibilité des imports.
+s'importe sous le nom `genpatientprofile`.
 
 Pour le pipeline Brest :
 
 ```python
-from fictomed import generate
+from genpatientprofile import generate
 
 df = generate(
     pipeline_name="pmsi_sampling",
@@ -71,7 +71,7 @@ df = generate(
 Pour le pipeline AP-HP :
 
 ```python
-from fictomed import generate
+from genpatientprofile import generate
 
 df = generate(
     pipeline_name="profile_generation",
@@ -165,7 +165,7 @@ alias dépréciés.
 ## Architecture
 
 ```
-fictomed/
+genpatientprofile/
 ├── __init__.py        # API publique
 ├── core.py            # Fonction principale generate()
 ├── registry.py        # Registre des pipelines (PIPELINES) ainsi que du chemin vers le fichier de config (CONFIG_DIR)
@@ -202,13 +202,13 @@ fictomed/
 
 ### Ajouter un nouveau pipeline
 
-1. Créer un dossier `fictomed/sites/<nom_site>/`
+1. Créer un dossier `genpatientprofile/sites/<nom_site>/`
 2. Implémenter `MedPipelineBase` dans `pipeline.py`
 3. Enregistrer le pipeline dans `registry.py`
 
 ```python
 # registry.py
-from fictomed.sites.nouveau_site.pipeline import NouveauSitePipeline
+from genpatientprofile.sites.nouveau_site.pipeline import NouveauSitePipeline
 
 PIPELINES = {
     "pmsi_sampling": BrestPipeline,

@@ -9,7 +9,7 @@ The orchestrator calls:
 2. :func:`load_system_prompt` to read the chosen ``.txt`` template file.
 
 The scenario dict must already contain the management fields added by
-:mod:`fictomed.sites.aphp.managment`:
+:mod:`genpatientprofile.sites.aphp.managment`:
 - ``case_management_type_text``          — French description of the hospitalisation context
 - ``coding_rule``    — ATIH rule id (e.g. ``"T1"``, ``"D3-2"``, ``"other"``)
 - ``template_name``  — filename of the system-prompt template
@@ -122,11 +122,11 @@ def make_user_prompt(
     scenario:
         Scenario dict enriched with the management fields ``case_management_type_text``,
         ``coding_rule``, and ``template_name`` (added by the orchestrator
-        after calling :func:`fictomed.sites.aphp.managment.define_managment_type`).
+        after calling :func:`genpatientprofile.sites.aphp.managment.define_managment_type`).
     cancer_codes:
-        Frozenset from :class:`fictomed.sites.aphp.scenario.ScenarioContext`.
+        Frozenset from :class:`genpatientprofile.sites.aphp.scenario.ScenarioContext`.
     atih_rules:
-        Dict from :func:`fictomed.sites.aphp.loader.load_atih_rules`.
+        Dict from :func:`genpatientprofile.sites.aphp.loader.load_atih_rules`.
     """
     is_cancer = scenario.get("icd_primary_code") in cancer_codes
     coding_rule = scenario.get("coding_rule", "")
@@ -404,14 +404,14 @@ def load_system_prompt(
     resolved_prompt_set: PromptSet | None = None,
 ) -> str:
     """Read a system-prompt template from the selected prompt set.
-    Templates live in ``fictomed/sites/aphp/templates/`` and, for staged
+    Templates live in ``genpatientprofile/sites/aphp/templates/`` and, for staged
     workflows, in its ``summary`` and ``final`` subdirectories.
 
     Parameters
     ----------
     template_name:
         Filename only (e.g. ``"medical_inpatient.txt"``), as set by
-        :func:`fictomed.sites.aphp.managment.define_managment_type`.
+        :func:`genpatientprofile.sites.aphp.managment.define_managment_type`.
     """
     if stage not in {None, "one_stage", "summary", "final"}:
         raise ValueError("stage doit valoir None, 'one_stage', 'summary' ou 'final'")

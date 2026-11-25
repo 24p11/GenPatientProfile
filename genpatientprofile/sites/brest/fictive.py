@@ -4,7 +4,7 @@ import numpy as np
 import polars as pl
 from tqdm import tqdm
 
-from fictomed.sites.brest.sampler import (
+from genpatientprofile.sites.brest.sampler import (
     build_dms_lookup,
     build_ref_map,
     ccam_fallback,

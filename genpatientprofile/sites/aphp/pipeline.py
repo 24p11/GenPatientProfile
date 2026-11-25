@@ -2,7 +2,7 @@
 
 This module implements the AP-HP-specific logic for generating synthetic
 medical reports from ATIH PMSI data. It inherits from the common
-:class:`~fictomed.pipeline.BasePipeline` and overrides the specific methods
+:class:`~genpatientprofile.pipeline.BasePipeline` and overrides the specific methods
 as needed.
 """
 
@@ -16,15 +16,15 @@ import polars as pl
 import json
 
 
-from fictomed.base import BasePipeline
-from fictomed.fictive import generate_fictive_stays
-from fictomed.scenario import format_scenarios
-from fictomed.sites.aphp import loader, managment
-from fictomed.sites.aphp import scenario as sc
-from fictomed.sites.aphp.fictive import generate_aphp_fictive
-from fictomed.sites.aphp.scenario import format_aphp_scenario
+from genpatientprofile.base import BasePipeline
+from genpatientprofile.fictive import generate_fictive_stays
+from genpatientprofile.scenario import format_scenarios
+from genpatientprofile.sites.aphp import loader, managment
+from genpatientprofile.sites.aphp import scenario as sc
+from genpatientprofile.sites.aphp.fictive import generate_aphp_fictive
+from genpatientprofile.sites.aphp.scenario import format_aphp_scenario
 
-from fictomed.sites.aphp.code_cards import (
+from genpatientprofile.sites.aphp.code_cards import (
     CodeCardsRegistry,
     add_code_cards_to_row,
 )

@@ -6,11 +6,11 @@ import numpy as np
 import polars as pl
 from tqdm import tqdm
 
-from fictomed.sites.aphp import managment
-from fictomed.sites.aphp import scenario as sc
+from genpatientprofile.sites.aphp import managment
+from genpatientprofile.sites.aphp import scenario as sc
 
 
-# The _dicts_to_df helper is now in fictomed.fictive.py
+# The _dicts_to_df helper is now in genpatientprofile.fictive.py
 def generate_aphp_fictive(
     data: dict[str, pl.LazyFrame],
     n_sejours: int = 10,

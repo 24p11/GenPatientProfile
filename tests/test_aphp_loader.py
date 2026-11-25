@@ -1,10 +1,10 @@
-"""Tests du loader AP-HP (``fictomed.sites.aphp.loader``).
+"""Tests du loader AP-HP (``genpatientprofile.sites.aphp.loader``).
 
 Le dépôt n'a pas de suite de tests configurée : ce fichier est exécutable tel
 quel (``python tests/test_aphp_loader.py``) et reste compatible pytest
 (``pytest tests/``) le jour où une suite est mise en place.
 
-Il faut un interpréteur où ``fictomed`` et ``polars`` sont importables, par
+Il faut un interpréteur où ``genpatientprofile`` et ``polars`` sont importables, par
 exemple le venv d'un projet qui installe ce clone en éditable.
 """
 
@@ -17,7 +17,7 @@ from pathlib import Path
 
 import polars as pl
 
-from fictomed.sites.aphp import loader as L
+from genpatientprofile.sites.aphp import loader as L
 
 
 # ---------------------------------------------------------------------------

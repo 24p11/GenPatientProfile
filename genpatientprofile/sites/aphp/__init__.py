@@ -3,7 +3,7 @@
 This package exposes the AP-HP-specific modules used by the AP-HP pipeline.
 """
 
-from fictomed.sites.aphp import (
+from genpatientprofile.sites.aphp import (
     loader,
     scenario,
     managment,
@@ -12,6 +12,6 @@ from fictomed.sites.aphp import (
     constants,
 )
 
-from fictomed.sites.aphp.pipeline import APHPPipeline
+from genpatientprofile.sites.aphp.pipeline import APHPPipeline
 
 __all__ = ["loader", "scenario", "managment", "prompt", "sampler", "constants", "APHPPipeline"]

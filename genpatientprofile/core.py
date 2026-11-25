@@ -3,8 +3,8 @@ from pathlib import Path
 
 import polars as pl
 
-from fictomed.config import load_config
-from fictomed.registry import (
+from genpatientprofile.config import load_config
+from genpatientprofile.registry import (
     CONFIG_DIR,
     PIPELINE_ALIASES,
     PIPELINE_NAMES,
@@ -96,7 +96,7 @@ def generate(
         print(f"Scénarios sauvegardés dans {output_path}")
 
         if pipeline_name == "profile_generation" and prompt_dir is not None:
-            from fictomed.sites.aphp.prompt_sets import (
+            from genpatientprofile.sites.aphp.prompt_sets import (
                 resolve_prompt_set,
                 snapshot_external_prompt_set,
             )

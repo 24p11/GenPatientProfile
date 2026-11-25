@@ -234,7 +234,7 @@ def sample_conditional(
     ``utils_v2.sample_from_df`` (utils_v2.py:508–517).
 
     Returns the sampled rows (without the description-enrichment that the
-    original did inline — that lives in :mod:`fictomed.sites.aphp.scenario`).
+    original did inline — that lives in :mod:`genpatientprofile.sites.aphp.scenario`).
     """
     rng = rng or _random
     np_rng = np_rng or np.random.default_rng()

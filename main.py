@@ -1,6 +1,6 @@
 import argparse
 
-from fictomed import PIPELINE_NAMES, generate
+from genpatientprofile import PIPELINE_NAMES, generate
 
 
 def parse_args() -> argparse.Namespace:
