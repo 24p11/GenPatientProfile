@@ -1,4 +1,4 @@
-# fictomed
+# GenPatientProfile
 
 Librairie Python pour la génération de séjours médicaux fictifs et de scénarios textuels à partir de plusieurs stratégies spécifiques aux centres.
 
@@ -27,20 +27,20 @@ L'idée est de pouvoir crée des scénarios hospitaliers fictifs à partir de s�
 ## Installation
 
 ```bash
-uv pip install fictomed
+uv pip install GenPatientProfile
 ```
 
 Ou depuis les sources :
 
 ```bash
-git clone https://github.com/CHU-brest/fictomed.git
-cd fictomed
+git clone https://github.com/24p11/GenPatientProfile.git
+cd GenPatientProfile
 pip install -e .
 ```
 
 ### Prérequis
 
-- Python 3.13+
+- Python 3.12+
 - polars
 - pyyaml
 - tqdm
@@ -50,6 +50,9 @@ pip install -e .
 ## Utilisation
 
 ### En tant que librairie
+
+La distribution s'installe sous le nom `GenPatientProfile`. Le module Python
+reste nommé `fictomed` afin de préserver la compatibilité des imports.
 
 Pour le pipeline Brest :
 

@@ -1,7 +1,11 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "fictomed"
-version = "0.1.3"
-description = "Package de génération de séjours et de scénario fictifs"
+name = "GenPatientProfile"
+version = "0.1.0"
+description = "Génération de profils patients et de scénarios cliniques synthétiques"
 readme = "README.md"
 license-files = ["LICENSE.md"]
 requires-python = ">=3.12"
@@ -13,14 +17,20 @@ authors = [
     { name = "Remi FLICOTEAUX", email = "remi.flicoteaux@aphp.fr" },
 ]
 dependencies = [
-    "numpy>=2.4.4",
-    "polars>=1.40.1",
-    "pyyaml>=6.0.3",
-    "tqdm>=4.67.3",
+    "numpy>=2.4.4,<3.0.0",
+    "polars>=1.40.1,<2.0.0",
+    "pyyaml>=6.0.3,<7.0.0",
+    "tqdm>=4.67.3,<5.0.0",
 ]
 [project.urls]
-Homepage = "https://github.com/CHU-Brest/fictomed"
-Repository = "https://github.com/CHU-Brest/fictomed"
+Homepage = "https://github.com/24p11/GenPatientProfile"
+Repository = "https://github.com/24p11/GenPatientProfile"
+Issues = "https://github.com/24p11/GenPatientProfile/issues"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.0",
+]
 [tool.setuptools.packages.find]
 include = ["fictomed*"]
 exclude = ["data*", "scenarios*", "reports*"]
@@ -32,8 +42,3 @@ exclude = ["data*", "scenarios*", "reports*"]
     "templates/**/*.yaml",
     "templates/**/*.yml",
 ]
-[[tool.uv.index]]
-name = "testpypi"
-url = "https://test.pypi.org/simple/"
-publish-url = "https://test.pypi.org/legacy/"
-explicit = true
