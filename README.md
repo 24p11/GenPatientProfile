@@ -168,6 +168,15 @@ Pour `profile_generation`, les bibliothèques facultatives de fiches de codes pe
 <referentials>/cards_library_categories/
 ```
 
+## Fichiers attendus et schémas
+
+Les deux pipelines nécessitent des fichiers locaux :
+
+- `pmsi_sampling` attend `PMSI_DP.csv`, `PMSI_CCAM_DP.csv`, `PMSI_DAS.csv`, `PMSI_DMS.csv`, `ALL_CLASSIF_PMSI.csv`, `ALL_CIM10.csv` et `ALL_CCAM.csv`, ou les Parquet convertis correspondants ;
+- `profile_generation` attend un profil `scenarios_*.parquet` ou `scenarios_*.pq`, un fichier `bn_pmsi_related_diag_*.csv`, un fichier `bn_pmsi_procedures_*.csv` et le répertoire de référentiels configuré.
+
+Le contrat détaillé — noms de colonnes, types, séparateurs, alias historiques et arborescence des référentiels — est disponible dans [la documentation des données d’entrée](https://github.com/24p11/GenPatientProfile/blob/main/docs/input-data-contract.md).
+
 ## Sorties
 
 La fonction `generate()` renvoie un `polars.DataFrame`. Si un répertoire `data.output` est configuré, elle écrit également un fichier :
