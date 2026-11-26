@@ -48,7 +48,7 @@ Le répertoire `pipelines.profile_generation.data.input` contient trois familles
 | Rôle | Motifs acceptés | Format |
 |---|---|---|
 | Profils | `scenarios_*.parquet`, `scenarios_*.pq` | Parquet |
-| Diagnostics associés | `bn_pmsi_related_diag_*.csv` | CSV `;`, UTF-8 |
+| Table statistique de relations DP–DAS | `bn_pmsi_related_diag_*.csv` | CSV `;`, UTF-8 |
 | Actes | `bn_pmsi_procedures_*.csv` | CSV `;`, UTF-8 |
 
 ### Profils
@@ -81,7 +81,10 @@ Les noms canoniques sont recommandés. Les alias historiques sont encore normali
 
 Les autres colonnes sont conservées lorsqu'elles traversent la construction du scénario, mais ne font pas partie du contrat minimal.
 
-### Diagnostics associés
+### Table statistique de relations DP–DAS
+
+Cette table ne décrit pas directement les DAS déjà attachés à chaque ligne du fichier de profils. Elle contient des relations statistiques entre profils et diagnostics secondaires, conditionnées notamment par le diagnostic principal et la racine de GHM. Elle est actuellement chargée et classée par le pipeline, mais le tirage de DAS supplémentaires est désactivé (`add_secondary=False`). Les DAS utilisés dans les scénarios restent donc ceux portés par `icd_secondary_code` (alias `diagnostic_associes`) dans `scenarios_*`.
+
 
 | Colonne canonique | Alias historique | Type logique | Statut |
 |---|---|---|---|
