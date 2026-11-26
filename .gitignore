@@ -145,6 +145,7 @@ celerybeat.pid
 # Data directories (PMSI extracts + referentials — non versionnés)
 data/
 reports/
+scenarios/
 pipelines/aphp/referentials/
 env/
 venv/
